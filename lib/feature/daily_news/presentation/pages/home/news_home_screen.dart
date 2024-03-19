@@ -55,7 +55,10 @@ class NewsHomeScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 // List<ArticleEntity>? sArticle = s.article;
                 // var articleList = s.article![index];
-                return NewsArtileTiles(article: s.article![index]);
+                return NewsArtileTiles(
+                  article: s.article![index],
+                  index: index,
+                );
               },
             );
           } else {
@@ -66,17 +69,19 @@ class NewsHomeScreen extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.go('/details');
+          print("hi");
         },
-        child: const Icon(Icons.navigate_next),
+        child: const Icon(Icons.bookmark),
       ),
     );
   }
 }
 
 class NewsArtileTiles extends StatelessWidget {
-  const NewsArtileTiles({super.key, required this.article});
+  const NewsArtileTiles(
+      {super.key, required this.article, required this.index});
   final ArticleEntity? article;
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -84,6 +89,7 @@ class NewsArtileTiles extends StatelessWidget {
       child: InkWell(
         onTap: () {
           print("hi");
+          context.push('/details', extra: article);
         },
         child: Row(
           // mainAxisAlignment: MainAxisAlignment.start,
