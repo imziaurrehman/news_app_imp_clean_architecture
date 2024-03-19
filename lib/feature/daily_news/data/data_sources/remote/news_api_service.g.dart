@@ -52,7 +52,7 @@ class _NewsApiService implements NewsApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    List<ArticleModel> value = _result.data!['articles']
+    List<ArticleModel> value = _result.data!['articles']!
         .map<ArticleModel>(
             (dynamic i) => ArticleModel.fromJson(i as Map<String, dynamic>))
         .toList();
