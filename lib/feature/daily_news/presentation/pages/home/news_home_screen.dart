@@ -33,7 +33,8 @@ class NewsHomeScreen extends StatelessWidget {
                 onTap: () => context.push('/saved'),
                 child: Icon(
                   Icons.bookmark,
-                  color: Colors.orange[400],
+                  color: Colors.grey[400],
+                  size: 30,
                 ),
               ),
             ),
@@ -78,3 +79,4 @@ class NewsHomeScreen extends StatelessWidget {
     );
   }
 }
+// some changes
