@@ -8,16 +8,16 @@ abstract class LocalArticleEvent extends Equatable {
   List<Object> get props => [articleEntity!];
 }
 
-class GetSavedArticle extends LocalArticleEvent {
-  GetSavedArticle();
+class GetSavedArticleEvent extends LocalArticleEvent {
+  GetSavedArticleEvent();
 }
 
-class SavedArticle extends LocalArticleEvent {
-  SavedArticle(ArticleEntity articleEntity)
+class SaveArticleEvent extends LocalArticleEvent {
+  SaveArticleEvent(ArticleEntity articleEntity)
       : super(articleEntity: articleEntity);
 }
 
-class RemoveSavedArticle extends LocalArticleEvent {
-  RemoveSavedArticle(ArticleEntity articleEntity)
+class RemoveSavedArticleEvent extends LocalArticleEvent {
+  RemoveSavedArticleEvent(ArticleEntity articleEntity)
       : super(articleEntity: articleEntity);
 }

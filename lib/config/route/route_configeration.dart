@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/domain/entities/article.dart';
 import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/presentation/pages/detail/news_detail_screen.dart';
+import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/presentation/pages/detail/saved_articles.dart';
 import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/presentation/pages/home/news_home_screen.dart';
 
 class RouteConfigeration {
@@ -28,6 +29,30 @@ class RouteConfigeration {
                   child: NewsDetailScreen(
                     extra: state.extra as ArticleEntity,
                   ),
+                  transitionDuration: const Duration(milliseconds: 150),
+                  transitionsBuilder: (BuildContext context,
+                      Animation<double> animation,
+                      Animation<double> secondaryAnimation,
+                      Widget child) {
+                    // Change the opacity of the screen using a Curve based on the the animation's
+                    // value
+                    return FadeTransition(
+                      opacity: CurveTween(curve: Curves.easeInOut)
+                          .animate(animation),
+                      child: child,
+                    );
+                  },
+                );
+              },
+            ),
+            GoRoute(
+              path: 'saved',
+              pageBuilder: (BuildContext context, GoRouterState state) {
+                return CustomTransitionPage<void>(
+                  key: state.pageKey,
+                  child: const SavedArticlesPage(
+                      // extra: state.extra as ArticleEntity,
+                      ),
                   transitionDuration: const Duration(milliseconds: 150),
                   transitionsBuilder: (BuildContext context,
                       Animation<double> animation,

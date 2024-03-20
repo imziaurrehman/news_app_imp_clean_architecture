@@ -16,24 +16,24 @@ class LocalArticleBloc extends Bloc<LocalArticleEvent, LocalArticleState> {
   LocalArticleBloc(this._savedArticleUseCase, this._getSavedArticleUseCase,
       this._removeArticleUseCase)
       : super(const LocalArticleLoading()) {
-    on<GetSavedArticle>(onGetSavedArticles);
-    on<SavedArticle>(onSavedArticles);
-    on<RemoveSavedArticle>(onRemoveArticles);
+    on<GetSavedArticleEvent>(onGetSavedArticles);
+    on<SaveArticleEvent>(onSavedArticles);
+    on<RemoveSavedArticleEvent>(onRemoveArticles);
   }
-  void onGetSavedArticles(
-      GetSavedArticle getSavedArticle, Emitter<LocalArticleState> emit) async {
+  void onGetSavedArticles(GetSavedArticleEvent getSavedArticle,
+      Emitter<LocalArticleState> emit) async {
     final articles = await _getSavedArticleUseCase.call(null);
     emit(LocalArticleDone(articles));
   }
 
   void onSavedArticles(
-      SavedArticle savedArticle, Emitter<LocalArticleState> emit) async {
+      SaveArticleEvent savedArticle, Emitter<LocalArticleState> emit) async {
     await _savedArticleUseCase(savedArticle.articleEntity);
     final articles = await _getSavedArticleUseCase(null);
     emit(LocalArticleDone(articles));
   }
 
-  void onRemoveArticles(RemoveSavedArticle removeSavedArticle,
+  void onRemoveArticles(RemoveSavedArticleEvent removeSavedArticle,
       Emitter<LocalArticleState> emit) async {
     await _removeArticleUseCase(removeSavedArticle.articleEntity);
     final articles = await _getSavedArticleUseCase(null);

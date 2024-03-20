@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:get_it/get_it.dart';
 import 'package:news_app_imp_clean_architecture_bloc/config/route/route_configeration.dart';
 import 'package:news_app_imp_clean_architecture_bloc/config/theme/text_theme.dart';
-import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/presentation/bloc/article/bloc/local_article_bloc.dart';
 import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/presentation/bloc/remote/bloc/remote_article_bloc.dart';
 import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/presentation/bloc/remote/bloc/remote_article_event.dart';
 import 'package:news_app_imp_clean_architecture_bloc/injection_container.dart';
