@@ -22,6 +22,7 @@ class SavedArticlesPage extends HookWidget {
           title: const Text("Saved Articles"),
           elevation: 0.0,
           backgroundColor: Colors.white,
+          centerTitle: true,
         ),
         backgroundColor: Colors.white,
         body: BlocBuilder<LocalArticleBloc, LocalArticleState>(
