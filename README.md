@@ -14,21 +14,18 @@ Successfully customized and optimized the application to meet specific project r
 
 <table>
   <tr>
-    <td>Splash</td>
-    <td>home</td>
-  </tr>
-  
+    <td>Home</td>
+    <td>Detail</td>
+  </tr> 
   <tr>
-    <td><img src="https://github.com/imziaurrehman/worldcitiestimezone/blob/main/assets/Screenshot_1710619574.png" width=270 height=520></td>
-    <td><img src="https://github.com/imziaurrehman/worldcitiestimezone/blob/main/assets/Screenshot_1710622741.png" width=270 height=520></td>
+    <td><img src="https://github.com/imziaurrehman/news_app_imp_clean_architecture/blob/main/assets/hompg.png" width=270 height=520></td>
+    <td><img src="https://github.com/imziaurrehman/news_app_imp_clean_architecture/blob/main/assets/detalpg.png" width=270 height=520></td>
   </tr>
 
 <tr>
-    <td>choose loc</td>
-    <td>choose loc</td>
-  
+    <td>Saved</td>
+    <td>choose loc</td> 
   </tr>
-<td><img src="https://github.com/imziaurrehman/worldcitiestimezone/blob/main/assets/Screenshot_1710622792.png" width=270 height=520></td>
-    <td><img src="https://github.com/imziaurrehman/worldcitiestimezone/blob/main/assets/Screenshot_1710622799.png" width=270 height=520></td>
+<td><img src="https://github.com/imziaurrehman/news_app_imp_clean_architecture/blob/main/assets/savedpg.png" width=270 height=520></td>
   <tr>
   
