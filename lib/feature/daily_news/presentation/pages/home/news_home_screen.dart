@@ -29,9 +29,12 @@ class NewsHomeScreen extends StatelessWidget {
             },
             child: Padding(
               padding: EdgeInsets.only(right: 6.w),
-              child: Icon(
-                Icons.bookmark_outline,
-                color: Colors.grey[400],
+              child: InkWell(
+                onTap: () => context.push('/saved'),
+                child: Icon(
+                  Icons.bookmark,
+                  color: Colors.orange[400],
+                ),
               ),
             ),
           )
@@ -71,15 +74,6 @@ class NewsHomeScreen extends StatelessWidget {
             return const SizedBox();
           }
         },
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print("hi");
-          // saved article page route
-          context.push('/saved');
-        },
-        child: const Icon(Icons.bookmark),
       ),
     );
   }

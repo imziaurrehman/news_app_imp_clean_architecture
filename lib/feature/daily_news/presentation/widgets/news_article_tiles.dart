@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app_imp_clean_architecture_bloc/core/resources/consts.dart';
@@ -27,7 +28,7 @@ class NewsArtileTiles extends StatelessWidget {
             child: CachedNetworkImage(
               imageUrl: image ?? defaultImg,
               progressIndicatorBuilder: (context, url, downloadProgress) =>
-                  CircularProgressIndicator(value: downloadProgress.progress),
+                  const CupertinoActivityIndicator(),
               errorWidget: (context, url, error) => Image.network(
                 defaultImg,
                 fit: BoxFit.cover,

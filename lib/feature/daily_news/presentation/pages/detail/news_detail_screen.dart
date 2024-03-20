@@ -9,8 +9,7 @@ import 'package:news_app_imp_clean_architecture_bloc/core/resources/consts.dart'
 import 'package:news_app_imp_clean_architecture_bloc/core/utils/extensions.dart';
 import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/domain/entities/article.dart';
 import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/presentation/bloc/article/bloc/local_article_bloc.dart';
-import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/presentation/bloc/remote/bloc/remote_article_bloc.dart';
-import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/presentation/bloc/remote/bloc/remote_article_state.dart';
+import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/presentation/bloc/article/bloc/local_article_event.dart';
 import 'package:news_app_imp_clean_architecture_bloc/injection_container.dart';
 
 class NewsDetailScreen extends StatelessWidget {

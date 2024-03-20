@@ -1,12 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/domain/entities/article.dart';
-import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/domain/usecases/get_article.dart';
 import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/domain/usecases/get_saved_article_usecase.dart';
 import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/domain/usecases/remove_article_usecase.dart';
 import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/domain/usecases/saved_artcle_usecase.dart';
+import 'package:news_app_imp_clean_architecture_bloc/feature/daily_news/presentation/bloc/article/bloc/local_article_event.dart';
 
-part 'local_article_event.dart';
 part 'local_article_state.dart';
 
 class LocalArticleBloc extends Bloc<LocalArticleEvent, LocalArticleState> {
@@ -37,6 +37,9 @@ class LocalArticleBloc extends Bloc<LocalArticleEvent, LocalArticleState> {
       Emitter<LocalArticleState> emit) async {
     await _removeArticleUseCase(removeSavedArticle.articleEntity);
     final articles = await _getSavedArticleUseCase(null);
+    // if (kDebugMode) {
+    //   print(articles);
+    // }
     emit(LocalArticleDone(articles));
   }
 }
